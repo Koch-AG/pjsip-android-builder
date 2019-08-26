@@ -22,13 +22,9 @@ export PATH="$NDK_TOOLCHAIN_VERSION:$PATH"
 
 if [ "$SETUP_PACKAGES" == "1" ]
 then
-    # Setup Java 12
     sudo apt update
     sudo apt upgrade
-    sudo add-apt-repository ppa:linuxuprising/java
-    sudo apt update
-    sudo apt install oracle-java12-installer
-    sudo apt install oracle-java12-set-default
+    sudo apt install openjdk-8-jdk openjdk-8-jre
     sudo apt-get install -y unzip git
 
     DEPS="vim git curl bzip2 gcc g++ binutils make autoconf openssl \
