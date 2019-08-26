@@ -37,7 +37,7 @@ function build_library {
     echo "Building OpenSSL Library for Android Arch $OPENSSL_TARGET_ABI"
     mkdir -p ${OPENSSL_OUTPUT_PATH}
     export PATH=$TOOLCHAIN_PATH:$PATH
-    make && make install
+    make -j15 && make install
     rm -rf ${OPENSSL_TMP_FOLDER}
     echo "Build completed! Check output libraries in ${OPENSSL_OUTPUT_PATH}"
 }

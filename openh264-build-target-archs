@@ -62,7 +62,7 @@ do
         ARGS="${ARGS}mips64"
     fi
     
-    make ${ARGS} >> "${LOG_PATH}/${arch}.log" 2>&1
+    make -j15 ${ARGS} >> "${LOG_PATH}/${arch}.log" 2>&1
     mkdir -p ${LIB_PATH}/${arch}
     make ${ARGS} install >> "${LOG_PATH}/${arch}.log" 2>&1
 done
