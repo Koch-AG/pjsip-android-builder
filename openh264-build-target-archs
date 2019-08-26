@@ -43,11 +43,11 @@ do
 
     elif [ "$arch" == "x86" ]
     then
-        ARGS="${ARGS}x86"
+        ARGS="${ARGS}x86 ENABLEPIC=Yes"
 
     elif [ "$arch" == "x86_64" ]
     then
-        ARGS="${ARGS}x86_64"
+        ARGS="${ARGS}x86_64 ENABLEPIC=Yes"
 
     elif [ "$arch" == "arm64-v8a" ]
     then
