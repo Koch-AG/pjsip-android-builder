@@ -105,6 +105,11 @@ then
     echo "Extracting PJSIP ..."
     tar xjf pjsip.tar.bz2 && rm -rf pjsip.tar.bz2
 
+    # Buffer Background Color PATCH
+    cd $PATCH_DIR/changeset_buffercolor
+    ./patch.sh
+    cd $BASEDIR
+
     # G.729 Codec PATCH
     if [ "${ENABLE_G729}" == "1" ]
     then

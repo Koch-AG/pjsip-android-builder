@@ -1,0 +1,11 @@
+--- pjmedia/src/pjmedia/vid_port.c	2019-08-27 14:53:31.243336642 +0200
++++ pjmedia/src/pjmedia/vid_port.c	2019-08-27 14:53:31.243336642 +0200
+@@ -799,7 +799,7 @@
+ 	    } else if (fmt->id == PJMEDIA_FORMAT_I420 ||
+ 	  	       fmt->id == PJMEDIA_FORMAT_YV12)
+ 	    {	    	
+-	    	pj_memset(frame.buf, 16, vafp.plane_bytes[0]);
++	    	pj_memset(frame.buf, 213, vafp.plane_bytes[0]);
+ 	    	pj_memset((pj_uint8_t*)frame.buf + vafp.plane_bytes[0],
+ 		      	  0x80, vafp.plane_bytes[1] * 2);
+ 	    }
