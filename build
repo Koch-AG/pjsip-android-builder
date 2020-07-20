@@ -42,7 +42,6 @@ function setConfigSite {
     echo "#define PJMEDIA_AUDIO_DEV_HAS_ANDROID_JNI 0" >> "$CONFIG_SITE_PATH"
     echo "#define PJMEDIA_AUDIO_DEV_HAS_OPENSL 1" >> "$CONFIG_SITE_PATH"
     echo "#define PJSIP_AUTH_AUTO_SEND_NEXT 0" >> "$CONFIG_SITE_PATH"
-    echo "#define PJMEDIA_HAS_OPUS_CODEC 1" >> "$CONFIG_SITE_PATH"
 
     if [ "${ENABLE_G729}" == "1" ]
     then
@@ -61,11 +60,7 @@ function buildPjSip {
 
     args=("--use-ndk-cflags"
         "--with-ssl=${OPENSSL_BUILD_OUT_PATH}/libs/${arch}"
-        "--with-openh264=${OPENH264_BUILD_OUT_PATH}/libs/${arch}"
-        "--with-opus=${OPUS_BUILD_OUT_PATH}/libs/${arch}"
-        "--enable-g729-codec")
-
-    (( "${ENABLE_G729}" == "1" )) && args+=("--enable-g729-codec")
+        "--with-openh264=${OPENH264_BUILD_OUT_PATH}/libs/${arch}")
 
     APP_PLATFORM=android-${TARGET_ANDROID_API} TARGET_ABI=$arch ./configure-android "${args[@]}" >> "${FINAL_BUILD_LOGS}/${arch}.log" 2>&1
 
