@@ -99,11 +99,11 @@ then
     echo "Downloading PJSIP ${PJSIP_VERSION} ..."
     echo ""
     cd $DOWNLOAD_DIR
-    curl -L -# -o pjsip.tar.bz2 "$PJSIP_DOWNLOAD_URL" 2>&1
+    curl -L -# -o pjsip.tar.gz "$PJSIP_DOWNLOAD_URL" 2>&1
     rm -rf "$PJSIP_DIR_NAME"
     echo "PJSIP downloaded!"
     echo "Extracting PJSIP ..."
-    tar xjf pjsip.tar.bz2 && rm -rf pjsip.tar.bz2
+    tar xzf pjsip.tar.gz && rm -rf pjsip.tar.gz
 
     # Buffer Background Color PATCH
     cd $PATCH_DIR/changeset_buffercolor
